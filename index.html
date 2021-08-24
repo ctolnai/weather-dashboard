@@ -33,8 +33,8 @@
 
 <body>
     <main>
-        <div class="container m-2 p-2 w-100">
-            <div class="row m-0 w-100">
+        <div class="container m-2 p-2 mw-100">
+            <div class="row m-0">
                 <div class="card col-lg-4 p-0">
                     <h3 class="card-header">Recent Cities</h3>
                     <ul class="list-group list-group-flush">
@@ -51,20 +51,22 @@
                     </ul>
                 </div>
                 <div class="col-lg-8">
-                    <div class="currentCity border border-dark b-8">
+                    <div class="currentCity border border-dark rounded">
                         <p id="city">city</p>
                         <p id="temp">temp</p>
                         <p id="wind">wind</p>
                         <p id="humidity">humidity</p>
                         <p id="uvIndex">uvIndex</p>
                     </div>
-                    <h4>5-Day Forecast:</h4>
-                    <div class="container fiveDay">
+                    <div class="forecast">
+                        <h4>5-Day Forecast:</h4>
+                        <div class="container fiveDay">
                             <div id="day1 col-lg-2">day1</div>
                             <div id="day2 col-lg-2">day2</div>
                             <div id="day3 col-lg-2">day3</div>
                             <div id="day4 col-lg-2">day4</div>
                             <div id="day5 col-lg-2">day5</div>
+                        </div>
                     </div>
                 </div>
             </div>

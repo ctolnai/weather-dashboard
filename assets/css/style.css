@@ -16,3 +16,7 @@
 .card{
     width: 20vw
 }
+
+.currentCity{
+    border: solid, black; 
+}

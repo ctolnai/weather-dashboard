@@ -8,7 +8,9 @@
     <title>Weather Dashboard</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"
@@ -31,27 +33,42 @@
 
 <body>
     <main>
-        <div class="container m-0 p-2">
-            <div class="card col-lg-4">
-                <div class="card-header">
-                    Recent Cities
+        <div class="container m-2 p-2">
+            <div class="row m-0">
+                <div class="card col-lg-4 p-0">
+                    <h3 class="card-header">Recent Cities</h3>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item id='1'">City 1</li>
+                        <li class="list-group-item id='2'">City 2</li>
+                        <li class="list-group-item id='3'">City 3</li>
+                        <li class="list-group-item id='4'">City 4</li>
+                        <li class="list-group-item id='5'">City 5</li>
+                        <li class="list-group-item id='6'">City 6</li>
+                        <li class="list-group-item id='7'">City 7</li>
+                        <li class="list-group-item id='8'">City 8</li>
+                        <li class="list-group-item id='9'">City 9</li>
+                        <li class="list-group-item id='10'">City 10</li>
+                    </ul>
                 </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item id='1'">City 1</li>
-                    <li class="list-group-item id='2'">City 2</li>
-                    <li class="list-group-item id='3'">City 3</li>
-                    <li class="list-group-item id='4'">City 4</li>
-                    <li class="list-group-item id='5'">City 5</li>
-                    <li class="list-group-item id='6'">City 6</li>
-                    <li class="list-group-item id='7'">City 7</li>
-                    <li class="list-group-item id='8'">City 8</li>
-                    <li class="list-group-item id='9'">City 9</li>
-                    <li class="list-group-item id='10'">City 10</li>
-                </ul>
-            </div>
-            <div class="currentCity col-lg-8 ">
-                hello world
-
+                <div class="container col-lg-8">
+                    <div class="row currentCity">
+                        <p id="city">city</p>
+                        <p id="temp">temp</p>
+                        <p id="wind">wind</p>
+                        <p id="humidity">humidty</p>
+                        <p id="uvIndex">uvIndex</p>
+                    </div>
+                    <div class="fiveDay p-0">
+                        <div class="container">
+                            <h4 class="row">5-Day Forecast:</h4>
+                            <p id="day1 col-lg-2">day1</p>
+                            <p id="day2 col-lg-2">day2</p>
+                            <p id="day3 col-lg-2">day3</p>
+                            <p id="day4 col-lg-2">day4</p>
+                            <p id="day5 col-lg-2">day5</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>

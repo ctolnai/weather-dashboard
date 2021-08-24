@@ -33,8 +33,8 @@
 
 <body>
     <main>
-        <div class="container m-2 p-2">
-            <div class="row m-0">
+        <div class="container m-2 p-2 w-100">
+            <div class="row m-0 w-100">
                 <div class="card col-lg-4 p-0">
                     <h3 class="card-header">Recent Cities</h3>
                     <ul class="list-group list-group-flush">
@@ -50,23 +50,21 @@
                         <li class="list-group-item id='10'">City 10</li>
                     </ul>
                 </div>
-                <div class="container col-lg-8">
-                    <div class="row currentCity">
+                <div class="col-lg-8">
+                    <div class="currentCity border border-dark b-8">
                         <p id="city">city</p>
                         <p id="temp">temp</p>
                         <p id="wind">wind</p>
-                        <p id="humidity">humidty</p>
+                        <p id="humidity">humidity</p>
                         <p id="uvIndex">uvIndex</p>
                     </div>
-                    <div class="fiveDay p-0">
-                        <div class="container">
-                            <h4 class="row">5-Day Forecast:</h4>
-                            <p id="day1 col-lg-2">day1</p>
-                            <p id="day2 col-lg-2">day2</p>
-                            <p id="day3 col-lg-2">day3</p>
-                            <p id="day4 col-lg-2">day4</p>
-                            <p id="day5 col-lg-2">day5</p>
-                        </div>
+                    <h4>5-Day Forecast:</h4>
+                    <div class="container fiveDay">
+                            <div id="day1 col-lg-2">day1</div>
+                            <div id="day2 col-lg-2">day2</div>
+                            <div id="day3 col-lg-2">day3</div>
+                            <div id="day4 col-lg-2">day4</div>
+                            <div id="day5 col-lg-2">day5</div>
                     </div>
                 </div>
             </div>

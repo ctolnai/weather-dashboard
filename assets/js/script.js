@@ -1,13 +1,16 @@
 var searchBtn = $(".btn");
 var city = $("#citySearch");
 var city1 = $("#city1");
+var recentCities = $("#recentCities");
+var test = $("#test");
 
-// Save city into local storage:
-searchBtn.click((event) => {
-    event.preventDefault();
-    localStorage.setItem(city.val(), city.val())
 
-    fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city.val()}&units=imperial&appid=6a6da9ba64b6560cd35736d7ad6021e7`)
+
+
+function getWeather(city){
+    
+    console.log(city)
+     fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=6a6da9ba64b6560cd35736d7ad6021e7`)
         .then(function (response) {
             return response.json();
         })
@@ -36,14 +39,40 @@ searchBtn.click((event) => {
                 })
 
             
-
+             
         })
-})
+}
+// Save city into local storage:
+searchBtn.click((event) => {
+    event.preventDefault();
+    console.log(city.val())
+    localStorage.setItem(city.val(), city.val())
 
-// load city from local storage and put in recent cities card
-var userCity = localStorage.getItem(city)
+    
+
+    getWeather(city.val())
 
 
+    })
 
-console.log(userCity)
 
+    function allStorage() {
+
+        var values = [],
+            keys = Object.keys(localStorage),
+            i = keys.length;
+    
+        while ( i-- ) {
+            values.push( localStorage.getItem(keys[i]) );
+        }
+    
+        return values;
+    }
+
+for (let i = 0; i < allStorage().length; i++) {
+    // console.log(allStorage()[i])
+    var currentCity = allStorage()[i]
+    var recentCities = $(`<button class="prevCity flex-row justify-space-between align-center p-2 bg-light text-dark" onClick= "${getWeather(currentCity)}"</button>`);
+  recentCities.text(allStorage()[i]);
+  test.append(recentCities);
+}

@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"
         integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 <header>
@@ -42,7 +43,7 @@
                 </div>
                 <div class="col-lg-8">
                     <div class="currentCity border border-dark rounded">
-                        <p id="city">City:</p>
+                        <p class= "mainCity" id="city"></p>
                         <p id="temp">Temperature:</p>
                         <p id="wind">Wind Speed:</p>
                         <p id="humidity">Humidity:</p>
@@ -54,11 +55,11 @@
                         <div class="container">
                             <div class="row">    
                             <div class="fiveDay">
-                                <div class="col-lg-2.5 bg-dark text-light p-1 m-2" id="0"></div>
-                                <div class="col-lg-2.5 bg-dark text-light p-1 m-2" id="7"></div>
-                                <div class="col-lg-2.5 bg-dark text-light p-1 m-2" id="14"></div>
-                                <div class="col-lg-2.5 bg-dark text-light p-1 m-2" id="21"></div>
-                                <div class="col-lg-2.5 bg-dark text-light p-1 m-2" id="28"></div>
+                                <div class="col-lg-2.5 bg-secondary text-light p-1 m-2" id="0"></div>
+                                <div class="col-lg-2.5 bg-secondary text-light p-1 m-2" id="7"></div>
+                                <div class="col-lg-2.5 bg-secondary text-light p-1 m-2" id="14"></div>
+                                <div class="col-lg-2.5 bg-secondary text-light p-1 m-2" id="21"></div>
+                                <div class="col-lg-2.5 bg-secondary text-light p-1 m-2" id="28"></div>
                             </div>
                         </div>
                     </div>

@@ -4,12 +4,6 @@ var city1 = $("#city1");
 var recentCities = $("#recentCities");
 var test = $("#test");
 var today = moment();
-var day2 = moment().add(1, 'days');
-var day3 = moment().add(2, 'days');
-var day4 = moment().add(3, 'days');
-var day5 = moment().add(4, 'days');
-
-
 
 
 
@@ -36,16 +30,18 @@ function getWeather(city) {
             // console.log(data.city.name)
             // console.log(data.city.coord.lat)
             // console.log(data.city.coord.lon)
-
+                var count = 0;
             for (let i = 0; i <= 41; i += 7) {
                 // console.log(i);
-                $(`#${i}`).text(day2.format("MM/DD/YYYY"))
+                if (i%7 ===0){count ++
+                    var day = moment().add(count, 'days');
+                    $(`#${i}`).html(day.format("MM/DD/YYYY"));
+            }
                 var link = $("<img>");
                 link.attr("src", `https://openweathermap.org/img/w/${data.list[i].weather[0].icon}.png`);
                 link.text("icon");
                 link.addClass("link");
                 $(`#${i}`).append(link);
-                
                 $(`#${i}`).append(`<p>Temp: ${data.list[i].main.temp} F`);
                 $(`#${i}`).append(`<p>Wind: ${data.list[i].wind.speed} MPH`);
                 $(`#${i}`).append(`<p>Humidity: ${data.list[i].main.humidity} %`);

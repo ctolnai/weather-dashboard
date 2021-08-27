@@ -76,10 +76,11 @@ searchBtn.click((event) => {
     test.text("");
 
     // pulls items from local storage and puts them in recent cities
+
     for (let i = 0; i < allStorage().length; i++) {
         // console.log(allStorage()[i])
         var currentCity = allStorage()[i]
-        var recentCities = $(`<button class="prevCity flex-row justify-space-between align-center p-2 bg-light text-dark" onClick= "${getWeather(currentCity)}"</button>`);
+        var recentCities = $(`<button class="prevCity flex-row justify-space-between align-center p-2 bg-light text-dark" data-city=${currentCity}></button>`);
         recentCities.text(allStorage()[i]);
         test.append(recentCities);
     }
@@ -105,7 +106,18 @@ function allStorage() {
 
 for (let i = 0; i < allStorage().length; i++) {
     var currentCity = allStorage()[i]
-    var recentCities = $(`<button class="prevCity flex-row justify-space-between align-center p-2 bg-light text-dark" onClick= "${getWeather(currentCity)}"</button>`);
+    var recentCities = $(`<button class="prevCity flex-row justify-space-between align-center p-2 bg-light text-dark" data-city="${currentCity}"></button>`);
     recentCities.text(allStorage()[i]);
     test.append(recentCities);
 }
+
+$("#test").on("click", "button", function(event){
+// console.log(event.target)
+var pulledCity = $(this)
+
+// console.log(pulledCity.attr("data-city"))
+var showCity = pulledCity.attr("data-city")
+
+getWeather (showCity)
+
+})

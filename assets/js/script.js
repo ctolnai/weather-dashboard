@@ -24,9 +24,18 @@ function getWeather(city){
             console.log(data.city.name)
             console.log(data.city.coord.lat)
             console.log(data.city.coord.lon)
+        
             for (let i = 0; i <= 41; i += 7) {
-                console.log(i)
-                $(`#${i}`).text(data.list[i].main.temp)
+                console.log(i);
+                var link = $("<img>");
+                link.attr("src", `https://openweathermap.org/img/w/${data.list[i].weather[0].icon}.png`);
+                link.text("icon");
+                link.addClass("link");
+                $(`#${i}`).html(link);
+                $(`#${i}`).append(`<p>Temp: ${data.list[i].main.temp} F`);
+                $(`#${i}`).append(`<p>Wind: ${data.list[i].wind.speed} MPH`);
+                $(`#${i}`).append(`<p>Humidity: ${data.list[i].main.humidity} %`);
+
             }
             fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${data.city.coord.lat}&lon=${data.city.coord.lon}&appid=6a6da9ba64b6560cd35736d7ad6021e7`)
                 .then(function (response) {
@@ -42,6 +51,7 @@ function getWeather(city){
              
         })
 }
+
 // Save city into local storage:
 searchBtn.click((event) => {
     event.preventDefault();
@@ -51,7 +61,15 @@ searchBtn.click((event) => {
     
 
     getWeather(city.val())
-
+    test.text("");
+    for (let i = 0; i < allStorage().length; i++) {
+        // console.log(allStorage()[i])
+        var currentCity = allStorage()[i]
+        var recentCities = $(`<button class="prevCity flex-row justify-space-between align-center p-2 bg-light text-dark" onClick= "${getWeather(currentCity)}"</button>`);
+      recentCities.text(allStorage()[i]);
+      test.append(recentCities);
+    }
+    
 
     })
 
@@ -69,8 +87,9 @@ searchBtn.click((event) => {
         return values;
     }
 
+
+
 for (let i = 0; i < allStorage().length; i++) {
-    // console.log(allStorage()[i])
     var currentCity = allStorage()[i]
     var recentCities = $(`<button class="prevCity flex-row justify-space-between align-center p-2 bg-light text-dark" onClick= "${getWeather(currentCity)}"</button>`);
   recentCities.text(allStorage()[i]);

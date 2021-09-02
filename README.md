@@ -6,3 +6,9 @@ This application is a weather dashboard that is used to look up weather by city.
 ## https://ctolnai.github.io/weather-dashboard/
 
 <img src=./assets/screenshot.png >
+
+## License and copyright
+
+(c) Chris Tolnai 
+
+Licensed under the [MIT License](LICENSE).
